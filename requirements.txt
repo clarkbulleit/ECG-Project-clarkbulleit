@@ -1,0 +1,6 @@
+numpy
+pytest
+sphinx
+pytest-cov
+pytest-pep8
+pytest-pudb
