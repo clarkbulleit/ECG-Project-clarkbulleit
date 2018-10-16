@@ -1,7 +1,18 @@
 import csv
 
+file = 'test_data/test_data1.csv'
 
-with open('test_data/test_data1.csv') as csv_file:
+
+def readcsv(file):
+    """
+
+    :param file: csv file
+    :return: lists compiled from csv file
+
+    """
+
+
+with open(file) as csv_file:
     readCSV = csv.reader(csv_file, delimiter=',')
 
     times = []
