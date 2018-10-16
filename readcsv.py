@@ -1,23 +1,23 @@
-import csv
-
-file = 'test_data/test_data1.csv'
-
 
 def readcsv(file):
-    """
+    import csv
+    with open(file) as csv_file:
+        readCSV = csv.reader(csv_file, delimiter=',')
 
-    :param file: csv file
-    :return: lists compiled from csv file
+        time = []
+        voltage = []
 
-    """
+        for row in readCSV:
+            t = float(row[0])
+            v = float(row[1])
+            time.append(t)
+            voltage.append(v)
+
+    return time, voltage
 
 
-with open(file) as csv_file:
-    readCSV = csv.reader(csv_file, delimiter=',')
-
-    times = []
-    voltages = []
-
-    for row in readCSV:
-        times.append(row[0])
-        voltages.append(row[1])
+if __name__ == "__main__":
+    try:
+        print(readcsv('test_data/test_data1.csv'))
+    except TypeError:
+        print("file contains non integer values")
