@@ -23,19 +23,24 @@ def readcsv(file):
 def validate_data(data):
     t = data["time"]
     v = data["voltage"]
+    exceeds_range = []
 
     if len(t) == len(v):
         print("the lengths are equal")
 
-    for x in data["time"]:
+    for x in t:
         if x < 0:
             print("negative time values present")
 
+    for y in v:
+        if y > 300:
+            exceeds_range.append(y)
 
+    print(len(exceeds_range))
 
 
 if __name__ == "__main__":
-            raw_data = readcsv('test_data/test_data31.csv')
+            raw_data = readcsv('test_data/test_data32.csv')
             print(raw_data)
             validate_data(raw_data)
 
