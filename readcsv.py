@@ -28,8 +28,6 @@ def validate_data(data):
         print("the lengths are equal")
 
     for x in data["time"]:
-        if type(x) != float:
-            print("non float data types found in code")
         if x < 0:
             print("negative time values present")
 
