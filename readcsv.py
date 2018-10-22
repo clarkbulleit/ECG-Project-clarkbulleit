@@ -1,7 +1,6 @@
 
 def readcsv(file):
     import csv
-    import numpy as np
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
 
@@ -15,13 +14,30 @@ def readcsv(file):
             raw_data["time"].append(t)
             raw_data["voltage"].append(v)
 
-        np.array(raw_data["time"])
-        np.array(raw_data["voltage"])
-
     return raw_data
 
-def validate_data(raw_data):
-    time = np.array(raw_data["time"])
+
+def validate_data(data):
+    import numpy as np
+    #time = np.array(raw_data["time"])
+    #voltage = np.array(raw_data["voltage"])
+
+    if len(raw_data["time"]) == len(raw_data["voltage"]):
+        print("the lengths are equal")
+
+    for x in raw_data["time"]:
+        if type(x) != float:
+            print("the time values are not all floats")
+
 
 if __name__ == "__main__":
-        print(readcsv('test_data/test_data1.csv'))
+        try:
+            raw_data = readcsv('test_data/test_data31.csv')
+            print(validate_data(raw_data))
+        except ValueError:
+            print("not all data points are floats")
+            pass
+
+
+
+
