@@ -18,9 +18,6 @@ def readcsv(file):
 
 
 def validate_data(data):
-    import numpy as np
-    #time = np.array(raw_data["time"])
-    #voltage = np.array(raw_data["voltage"])
 
     if len(raw_data["time"]) == len(raw_data["voltage"]):
         print("the lengths are equal")
@@ -36,6 +33,7 @@ if __name__ == "__main__":
             print(validate_data(raw_data))
         except ValueError:
             print("not all data points are floats")
+            t = 0
             pass
 
 
