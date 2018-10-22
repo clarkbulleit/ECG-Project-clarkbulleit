@@ -29,6 +29,7 @@ def validate_data(data):
         if type(x) != float:
             print("the time values are not all floats")
 
+
 if __name__ == "__main__":
             raw_data = readcsv('test_data/test_data31.csv')
             print(raw_data)
