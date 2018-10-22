@@ -9,10 +9,13 @@ def readcsv(file):
         raw_data["voltage"] = []
 
         for row in readCSV:
-            t = float(row[0])
-            v = float(row[1])
-            raw_data["time"].append(t)
-            raw_data["voltage"].append(v)
+            try:
+                t = float(row[0])
+                v = float(row[1])
+                raw_data["time"].append(t)
+                raw_data["voltage"].append(v)
+            except ValueError:
+                continue
 
     return raw_data
 
@@ -28,13 +31,10 @@ def validate_data(data):
 
 
 if __name__ == "__main__":
-        try:
             raw_data = readcsv('test_data/test_data31.csv')
-            print(validate_data(raw_data))
-        except ValueError:
-            print("not all data points are floats")
-            t = 0
-            pass
+            print(raw_data)
+            print(len(raw_data["time"]))
+            print(len(raw_data["voltage"]))
 
 
 
