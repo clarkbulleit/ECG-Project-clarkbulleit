@@ -1,21 +1,27 @@
 
-def readcsv(file, num):
+def readcsv(file):
     import csv
+    import numpy as np
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
 
-        rawdata = {}
-        rawdata["time"] = []
-        rawdata["voltage"] = []
+        raw_data = {}
+        raw_data["time"] = []
+        raw_data["voltage"] = []
 
         for row in readCSV:
             t = float(row[0])
             v = float(row[1])
-            rawdata["time"].append(t)
-            rawdata["voltage"].append(v)
+            raw_data["time"].append(t)
+            raw_data["voltage"].append(v)
 
-    return rawdata
+        np.array(raw_data["time"])
+        np.array(raw_data["voltage"])
 
+    return raw_data
+
+def validate_data(raw_data):
+    time = np.array(raw_data["time"])
 
 if __name__ == "__main__":
-        readcsv('test_data/test_data1.csv', 1)
+        print(readcsv('test_data/test_data1.csv'))
