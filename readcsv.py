@@ -21,21 +21,25 @@ def readcsv(file):
 
 
 def validate_data(data):
+    t = data["time"]
+    v = data["voltage"]
 
-    if len(raw_data["time"]) == len(raw_data["voltage"]):
+    if len(t) == len(v):
         print("the lengths are equal")
 
-    for x in raw_data["time"]:
+    for x in data["time"]:
         if type(x) != float:
-            print("the time values are not all floats")
+            print("non float data types found in code")
+        if x < 0:
+            print("negative time values present")
+
+
 
 
 if __name__ == "__main__":
             raw_data = readcsv('test_data/test_data31.csv')
             print(raw_data)
-            print(len(raw_data["time"]))
-            print(len(raw_data["voltage"]))
-
+            validate_data(raw_data)
 
 
 
