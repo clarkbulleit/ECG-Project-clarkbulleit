@@ -1,6 +1,6 @@
-file = 'test_readcsv.csv'
 
-def test_readcsv(file):
+
+def test_readcsv():
     from readcsv import readcsv
-    readcsv(file)
-    assert time[0] == 'Test'
+    raw_data = readcsv('test_readcsv.csv')
+    assert raw_data["time"][0] == 1
