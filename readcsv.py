@@ -1,5 +1,10 @@
 
 def readcsv(file):
+    """
+
+    :param file:
+    :return: dictionary with lists for time and voltage
+    """
     import csv
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
