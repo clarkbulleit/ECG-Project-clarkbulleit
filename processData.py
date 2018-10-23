@@ -9,7 +9,7 @@ def plot_data(data):
     plt.show()
 
 
-def peak_detect(data, thres=1.5, min_dist=100):
+def peak_detect(data, thres=1, min_dist=1):
     import peakutils
     import numpy as np
     import matplotlib.pyplot as plt
@@ -22,8 +22,8 @@ def peak_detect(data, thres=1.5, min_dist=100):
     height_peaks = []
 
     for x in inds:
-        locs_peaks.append(t(x))
-        height_peaks.append(v(x))
+        locs_peaks.append(t[x])
+        height_peaks.append(v[x])
 
     plt.plot(t, v, locs_peaks, height_peaks, 'ro')
     plt.show()
