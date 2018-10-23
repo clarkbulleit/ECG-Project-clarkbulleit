@@ -38,8 +38,8 @@ def validate_data(data):
     v = data["voltage"]
     exceeds_range = []
 
-    if len(t) == len(v):
-        print("the lengths are equal")
+    if len(t) != len(v):
+        print("the lengths are not equal")
 
     for x in t:
         if x < 0:
@@ -48,5 +48,3 @@ def validate_data(data):
     for y in v:
         if y > 300:
             exceeds_range.append(y)
-
-    print(len(exceeds_range))
