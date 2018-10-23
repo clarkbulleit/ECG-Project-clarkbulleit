@@ -3,7 +3,7 @@ def readcsv(file):
     """
 
     :param file:
-    :return: dictionary with lists for
+    :return: dictionary with lists for time and voltage
     """
     import csv
     with open(file) as csv_file:
