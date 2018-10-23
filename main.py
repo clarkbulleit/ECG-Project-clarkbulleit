@@ -4,7 +4,7 @@ from processData import peak_detect
 
 
 if __name__ == "__main__":
-            raw_data = readcsv('test_data/test_data3.csv')
+            raw_data = readcsv('test_data/test_data5.csv')
             print(raw_data)
             validate_data(raw_data)
-            peak_detect(raw_data, .5, 1)
+            peak_detect(raw_data, .3, .01)
