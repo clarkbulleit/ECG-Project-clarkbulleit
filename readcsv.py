@@ -1,5 +1,12 @@
 
 def readcsv(file):
+    """
+
+    :param: input file, .csv form
+    :return: dictionary with lists of floats for time and voltage
+
+    Function does not import line from file if the data type isn't float
+    """
     import csv
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
@@ -37,12 +44,3 @@ def validate_data(data):
             exceeds_range.append(y)
 
     print(len(exceeds_range))
-
-
-if __name__ == "__main__":
-            raw_data = readcsv('test_data/test_data32.csv')
-            print(raw_data)
-            validate_data(raw_data)
-
-
-
