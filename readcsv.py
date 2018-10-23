@@ -2,8 +2,10 @@
 def readcsv(file):
     """
 
-    :param file:
-    :return: dictionary with lists for time and voltage
+    :param: input file, .csv form
+    :return: dictionary with lists of floats for time and voltage
+
+    If there is a blank
     """
     import csv
     with open(file) as csv_file:
@@ -48,6 +50,3 @@ if __name__ == "__main__":
             raw_data = readcsv('test_data/test_data32.csv')
             print(raw_data)
             validate_data(raw_data)
-
-
-
