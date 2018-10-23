@@ -44,9 +44,3 @@ def validate_data(data):
             exceeds_range.append(y)
 
     print(len(exceeds_range))
-
-
-if __name__ == "__main__":
-            raw_data = readcsv('test_data/test_data32.csv')
-            print(raw_data)
-            validate_data(raw_data)
