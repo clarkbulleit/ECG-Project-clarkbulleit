@@ -30,3 +30,5 @@ def peak_detect(data, perh=.5, perl=0.015):
 
     plt.plot(t, v, locs_peaks, height_peaks, 'ro')
     plt.show()
+
+    return locs_peaks
