@@ -1,5 +1,12 @@
 
 def readcsv(file):
+    """
+
+    :param: input file, .csv form
+    :return: dictionary with lists of floats for time and voltage
+
+    If there is a blank
+    """
     import csv
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
@@ -21,21 +28,19 @@ def readcsv(file):
 
 
 def validate_data(data):
+    t = data["time"]
+    v = data["voltage"]
+    exceeds_range = []
 
-    if len(raw_data["time"]) == len(raw_data["voltage"]):
+    if len(t) == len(v):
         print("the lengths are equal")
 
-    for x in raw_data["time"]:
-        if type(x) != float:
-            print("the time values are not all floats")
+    for x in t:
+        if x < 0:
+            print("negative time values present")
 
+    for y in v:
+        if y > 300:
+            exceeds_range.append(y)
 
-if __name__ == "__main__":
-            raw_data = readcsv('test_data/test_data31.csv')
-            print(raw_data)
-            print(len(raw_data["time"]))
-            print(len(raw_data["voltage"]))
-
-
-
-
+    print(len(exceeds_range))
