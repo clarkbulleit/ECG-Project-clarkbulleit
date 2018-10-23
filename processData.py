@@ -14,9 +14,10 @@ def peak_detect(data, perh=.5, perl=0.015):
 
     :param data: dictionary with lists under keys
     time and voltage
-    :param perh: percentage of max height used for threshold
-    :param perl: percentage of length used for min distance
-    :return: time locations of peaks
+    :param perh: percentage of max height used for threshold, float
+    :param perl: percentage of length used for min distance,float
+    :return: time locations of peaks in a list of floats
+
     """
     import peakutils
     import numpy as np
