@@ -1,12 +1,12 @@
 
 def peak_detect(data, perh=.5, perl=0.015):
     """
-
+    Detects peaks of ECG signals
     :param data: dictionary with lists under keys
-    time and voltage
+    "time" and "voltage"
     :param perh: percentage of max height used for threshold, float
     :param perl: percentage of length used for min distance,float
-    :return: time locations of peaks in a list of floats
+    :return: list of the time locations of the detected peaks
 
     """
     import peakutils
