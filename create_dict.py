@@ -1,5 +1,7 @@
 
-def create_dict(mean_hr_bpm, voltage_extremes, duration, num_beats, beats):
+
+def create_dict(mean_hr_bpm, voltage_extremes, duration, num_beats,
+                beats):
     metrics = {}
     metrics["mean_hr_bpm"] = mean_hr_bpm
     metrics["voltage_extremes"] = voltage_extremes
