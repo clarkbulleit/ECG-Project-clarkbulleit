@@ -13,4 +13,3 @@ def test_cound_beats():
 
     assert beats == 4
     assert beats != 3
-
