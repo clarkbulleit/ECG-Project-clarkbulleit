@@ -2,7 +2,7 @@
 def readcsv(file):
     """
 
-    :param: input file, .csv form
+    :param: .csv file
     :return: dictionary with lists of floats for time and voltage
 
     Function does not import line from file if the data type isn't float
