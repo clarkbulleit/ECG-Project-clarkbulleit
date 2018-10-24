@@ -1,16 +1,10 @@
 
-
 def test_readcsv():
+    """
+    Reads in short, known .csv file
+    Asserts that reader creates correct Dictionary
+    """
     from readcsv import readcsv
     raw_data = readcsv('test_readcsv.csv')
-    t = raw_data["time"]
-    v = raw_data["voltage"]
 
-    assert t[0] == 1
-    assert len(t) == 2
-
-    for x in t:
-        assert type(x) == float
-
-    for y in v:
-        assert type(y) == float
+    assert raw_data == {'time': [1, 7], 'voltage': [2, 9]}
