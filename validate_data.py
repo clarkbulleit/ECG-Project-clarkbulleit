@@ -2,7 +2,7 @@
 def validate_data(data):
     """
 
-    :param data: receives input of a dictionary with lists under the keys for
+    :param data: dictionary with lists under the keys for
     "time" and "voltage"
     :return:
     """
