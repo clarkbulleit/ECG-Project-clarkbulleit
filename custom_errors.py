@@ -3,11 +3,11 @@ class Error(Exception):
     pass
 
 
-class DiffVectorLengthError(Error):
-    """Raised when the input value is too small"""
+class DiffListLengthError(Error):
+    """Raised when the x and y lists are different lengths"""
     pass
 
 
 class NegTimeValueError(Error):
-    """Raised when the input value is too large"""
+    """Raised when time values are negative"""
     pass
