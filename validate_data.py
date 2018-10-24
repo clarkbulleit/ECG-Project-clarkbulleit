@@ -22,7 +22,6 @@ def validate_data(data):
     """
     t = data["time"]
     v = data["voltage"]
-    exceeds_range = []
 
     if len(t) != len(v):
         raise DiffListLengthError
