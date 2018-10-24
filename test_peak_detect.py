@@ -15,4 +15,5 @@ def test_peak_detect():
 
     locs_peaks = peak_detect(delta_train)
 
-    assert np.all(locs_peaks == np.array([.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5]))
+    assert np.all(locs_peaks == np.array([.5, 1.5, 2.5, 3.5, 4.5,
+                                          5.5, 6.5, 7.5, 8.5, 9.5]))
