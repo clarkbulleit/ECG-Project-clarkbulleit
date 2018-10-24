@@ -11,7 +11,7 @@ def peak_detect(data, perh=.5, perl=0.015):
     """
     import peakutils
     import numpy as np
-    import matplotlib.pyplot as plt
+    # import matplotlib.pyplot as plt
 
     v = data["voltage"]
     t = data["time"]
@@ -27,7 +27,6 @@ def peak_detect(data, perh=.5, perl=0.015):
         locs_peaks.append(t[x])
         height_peaks.append(v[x])
 
-    #plt.plot(t, v, locs_peaks, height_peaks, 'ro')
-    #plt.show()
-
+    # plt.plot(t, v, locs_peaks, height_peaks, 'ro')
+    # plt.show()
     return locs_peaks
