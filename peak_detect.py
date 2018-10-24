@@ -17,7 +17,7 @@ def peak_detect(data, perh=.5, perl=0.015):
     t = data["time"]
     cb = np.array(v)
     thres = perh*max(cb)
-    min_dist = perl*len(t)
+    min_dist = round(perl*len(t))
 
     inds = peakutils.indexes(cb, thres, min_dist)
     locs_peaks = []
