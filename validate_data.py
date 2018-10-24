@@ -1,3 +1,17 @@
+class Error(Exception):
+    """Base class for other exceptions"""
+    pass
+
+
+class DiffListLengthError(Error):
+    """Raised when the x and y lists are different lengths"""
+    pass
+
+
+class NegTimeValueError(Error):
+    """Raised when time values are negative"""
+    pass
+
 
 def validate_data(data):
     """
@@ -11,12 +25,8 @@ def validate_data(data):
     exceeds_range = []
 
     if len(t) != len(v):
-        print("the lengths are not equal")
+        raise DiffListLengthError
 
     for x in t:
         if x < 0:
-            print("negative time values present")
-
-    for y in v:
-        if y > 300:
-            exceeds_range.append(y)
+            raise NegTimeValueError
