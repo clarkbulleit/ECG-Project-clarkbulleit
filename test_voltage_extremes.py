@@ -1,5 +1,11 @@
 
 def test_voltage_extremes():
+    """
+    unit test for voltage_extremes function
+    creates input in form of dictionary
+    :return: asserts that a tuple was created
+    of the form (min(list), max(list))
+    """
     from voltage_extremes import voltage_extremes
 
     data = {'time': [1, 2, 3], 'voltage': [1, 2, 3]}
