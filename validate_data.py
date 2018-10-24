@@ -15,16 +15,17 @@ class NegTimeValueError(Error):
 
 def validate_data(data):
     """
-    
-    :param data: 
-    :return: error DiffListLengthError
+    :param data: dictionary with lists under keys
+    "time" and "voltage"
+    :return: DiffListLengthError if the time
+    and voltage lists are not equal
+    :return: NegTimeValueError if negative time
+    values are present
     """
-    t = data["time"]
-    v = data["voltage"]
 
-    if len(t) != len(v):
+    if len(data["time"]) != len(data["voltage"]):
         raise DiffListLengthError
 
-    for x in t:
+    for x in data["time"]:
         if x < 0:
             raise NegTimeValueError
