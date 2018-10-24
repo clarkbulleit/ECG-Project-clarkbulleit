@@ -1,8 +1,6 @@
 
 def test_validate_data():
-    from validate_data import validate_data
-    from validate_data import DiffListLengthError
-    from validate_data import NegTimeValueError
+    from validate_data import validate_data, DiffListLengthError, NegTimeValueError
     import pytest
 
     bad_input1 = {'time': [1, 1, 3], 'voltage': [1, 2]}
