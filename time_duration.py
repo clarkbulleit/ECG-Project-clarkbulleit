@@ -1,7 +1,6 @@
 
 def time_duration(data):
     """
-
     :param data: dictionary with list under
     key "time"
     :return: duration of the time list
