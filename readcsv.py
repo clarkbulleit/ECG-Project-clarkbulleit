@@ -10,7 +10,8 @@ def readcsv(file):
     """
     import csv
     import logging
-    logging.basicConfig(filename='Main_Log.log', level=logging.DEBUG)
+    logging.basicConfig(filename="Main_Log.txt", format='%(asctime)s %(message)s',
+                        datefmt='%m/%d/%Y %I:%M:%S %p')
 
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
