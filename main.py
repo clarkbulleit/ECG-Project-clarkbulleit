@@ -23,4 +23,3 @@ if __name__ == "__main__":
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
     print(metrics)
-    write_JSON(mean_hr_bpm, 'test_data1')
