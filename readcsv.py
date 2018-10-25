@@ -9,6 +9,9 @@ def readcsv(file):
     Prints warning with number of rows not imported because of invalid inputs
     """
     import csv
+    import logging
+    logging.basicConfig(filename='Main_Log.log', level=logging.DEBUG)
+
     with open(file) as csv_file:
         readCSV = csv.reader(csv_file, delimiter=',')
 
@@ -25,10 +28,10 @@ def readcsv(file):
                 raw_data["voltage"].append(v)
             except ValueError:
                 nn = nn + 1
-                continue
 
-    if nn != 0:
-        print("Warning: " + str(nn) + " Rows with non-numeric inputs were "
-                                      "not imported")
+                if nn != 0:
+                    # print("Warning: " + str(nn) + " Rows with non-numeric inputs were not imported")
+                    logging.warning(str(nn) + "Rows with non-numeric inputs were not imported")
+                continue
 
     return raw_data
