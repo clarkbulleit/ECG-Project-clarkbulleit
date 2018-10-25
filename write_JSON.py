@@ -13,5 +13,5 @@ def write_JSON(metrics, filename):
     metrics["num_beats"] = int(metrics["num_beats"])
     metrics['mean_hr_bpm'] = int(metrics['mean_hr_bpm'])
 
-    with open(filename + '.json', "w") as write_file:
+    with open('output_data/' + filename + '.json', "w") as write_file:
         json.dump(metrics, write_file, sort_keys=True, indent=4)
