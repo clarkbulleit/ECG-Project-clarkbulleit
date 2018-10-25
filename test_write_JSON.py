@@ -11,4 +11,3 @@ def test_write_JSON():
         m = json.load(read_file)
 
     assert metrics == m
-
