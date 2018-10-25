@@ -1,22 +1,31 @@
+class Error(Exception):
+    """Base class for other exceptions"""
+    pass
+
+
+class DiffListLengthError(Error):
+    """Raised when the x and y lists are different lengths"""
+    pass
+
+
+class NegTimeValueError(Error):
+    """Raised when time values are negative"""
+    pass
+
 
 def validate_data(data):
     """
-
-    :param data: receives input of a dictionary with lists under the keys for
+    :param data: Dictionary with lists under keys
     "time" and "voltage"
-    :return:
+    :return: DiffListLengthError if the time
+    and voltage lists are not equal
+    :return: NegTimeValueError if negative time
+    values are present
     """
-    t = data["time"]
-    v = data["voltage"]
-    exceeds_range = []
 
-    if len(t) != len(v):
-        print("the lengths are not equal")
+    if len(data["time"]) != len(data["voltage"]):
+        raise DiffListLengthError
 
-    for x in t:
+    for x in data["time"]:
         if x < 0:
-            print("negative time values present")
-
-    for y in v:
-        if y > 300:
-            exceeds_range.append(y)
+            raise NegTimeValueError
