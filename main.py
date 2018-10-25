@@ -13,7 +13,7 @@ from write_JSON import write_JSON
 if __name__ == "__main__":
     Successful_Read = False
 
-    while Successful_Read == False:
+    while Successful_Read is False:
         filename = input("Enter filename: ")
         raw_data = readcsv('test_data/' + filename + '.csv')
         try:
