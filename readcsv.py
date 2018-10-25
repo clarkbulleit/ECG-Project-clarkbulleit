@@ -6,6 +6,7 @@ def readcsv(file):
     :return: dictionary with lists of floats for time and voltage
 
     Function does not import line from file if the data type isn't float
+    Prints warning with number of rows not imported because of invalid inputs
     """
     import csv
     with open(file) as csv_file:
