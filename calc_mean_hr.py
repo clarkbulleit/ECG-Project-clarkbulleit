@@ -13,7 +13,10 @@ def calc_mean_hr(num_beats, duration):
     """
     :param num_beats: Int of number of detected beats
     :param duration: Float of duration of ECG strip
-    :return: Mean hr in beats per minute as int
+    :return: Mean hr in beats per minute as int, rounds the
+    float to nearest integer
+    Raises an error if the num_beats input = 0
+    Raises TypeError if non-numeric
     """
 
     if num_beats == 0:
