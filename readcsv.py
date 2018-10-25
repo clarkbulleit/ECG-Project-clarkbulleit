@@ -30,7 +30,8 @@ def readcsv(file):
                 nn = nn + 1
 
                 if nn != 0:
-                    logging.warning(str(nn) + "Rows with non-numeric inputs were not imported")
+                    logging.warning(str(nn) + "Rows with non-numeric "
+                                              "inputs were not imported")
                 continue
 
     return raw_data
