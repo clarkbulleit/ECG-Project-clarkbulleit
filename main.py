@@ -8,14 +8,21 @@ from count_beats import count_beats
 from calc_mean_hr import calc_mean_hr, NoBeatsDetected
 from create_dict import create_dict
 from write_JSON import write_JSON
+import logging
 
 
 if __name__ == "__main__":
     Successful_Read = False
 
     while Successful_Read is False:
-            filename = input("Enter filename: ")
-        raw_data = readcsv('test_data/' + filename + '.csv')
+        filename = input("Enter filename: ")
+
+        try:
+            raw_data = readcsv('test_data/' + filename + '.csv')
+        except FileNotFoundError:
+            print("File not found, enter new filename")
+            continue
+
         try:
             validate_data(raw_data)
         except DiffListLengthError:
@@ -36,7 +43,8 @@ if __name__ == "__main__":
     try:
         mean_hr_bpm = calc_mean_hr(num_beats, duration)
     except NoBeatsDetected:
-        print("No beats were detected")
+        logging.basicConfig(filename='Main_Log.log', level=logging.DEBUG)
+        logging.warning("No beats were detected")
         mean_hr_bpm = 0
 
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
