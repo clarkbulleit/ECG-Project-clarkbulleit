@@ -14,6 +14,7 @@ def readcsv(file):
         raw_data = {}
         raw_data["time"] = []
         raw_data["voltage"] = []
+        nn = 0
 
         for row in readCSV:
             try:
@@ -22,6 +23,11 @@ def readcsv(file):
                 raw_data["time"].append(t)
                 raw_data["voltage"].append(v)
             except ValueError:
+                nn = nn + 1
                 continue
+
+    if nn != 0:
+        print("Warning: " + str(nn) + " Rows with non-numeric inputs were "
+                                      "not imported")
 
     return raw_data
