@@ -9,5 +9,8 @@ def write_JSON(metrics, filename):
     alphabetic order
     """
     import json
+    metrics["beats"] = metrics["beats"].tolist()
+    print(metrics)
+
     with open(filename + '.json', "w") as write_file:
         json.dump(metrics, write_file, sort_keys=True, indent=4)
