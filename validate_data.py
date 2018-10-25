@@ -15,7 +15,7 @@ class NegTimeValueError(Error):
 
 def validate_data(data):
     """
-    :param data: dictionary with lists under keys
+    :param data: Dictionary with lists under keys
     "time" and "voltage"
     :return: DiffListLengthError if the time
     and voltage lists are not equal
