@@ -1,9 +1,9 @@
 
 def time_duration(data):
     """
-    :param data: dictionary with list under
+    :param data: Dictionary with list under
     key "time"
-    :return: duration of the time list
+    :return: Duration of the time list
     """
     t = data["time"]
     duration = t[-1] - t[0]

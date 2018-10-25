@@ -1,9 +1,9 @@
 
 def test_time_duration():
     """
-    tests time_duration function
-    :return: assertion that the function returns
-    the proper values
+    Tests time_duration function
+    :return: Assertion that the function returns
+    the proper value for duration
     """
     from time_duration import time_duration
 
