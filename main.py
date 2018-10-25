@@ -11,8 +11,8 @@ from write_JSON import write_JSON
 
 
 if __name__ == "__main__":
-    filename = 'test_data/test_data1.csv'
-    raw_data = readcsv(filename)
+    filename = 'test_data2'
+    raw_data = readcsv('test_data/' + filename + '.csv')
     validate_data(raw_data)
 
     beats = peak_detect(raw_data)
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     mean_hr_bpm = calc_mean_hr(num_beats, duration)
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
-    print(metrics)
+    write_JSON(metrics, filename)
