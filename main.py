@@ -12,6 +12,9 @@ import logging
 
 
 if __name__ == "__main__":
+    """ Takes user inputted .csv file 
+        Outputs metrics from ECG data
+    """
     Successful_Read = False
 
     while Successful_Read is False:
