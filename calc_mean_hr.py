@@ -5,7 +5,7 @@ class Error(Exception):
 
 
 class NoBeatsDetected(Error):
-    """Raised when the x and y lists are different leng"""
+    """Raised when no peaks have been detected"""
     pass
 
 
