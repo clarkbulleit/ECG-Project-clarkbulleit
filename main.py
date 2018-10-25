@@ -15,6 +15,7 @@ if __name__ == "__main__":
     """ Takes user inputted .csv file
         Outputs metrics from ECG data
     """
+    logging.basicConfig(filename="Main_Log.txt", format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
     Successful_Read = False
 
     while Successful_Read is False:
@@ -46,7 +47,6 @@ if __name__ == "__main__":
     try:
         mean_hr_bpm = calc_mean_hr(num_beats, duration)
     except NoBeatsDetected:
-        logging.basicConfig(filename='Main_Log.log', level=logging.DEBUG)
         logging.warning("No beats were detected")
         mean_hr_bpm = 0
 
