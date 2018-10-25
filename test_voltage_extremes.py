@@ -1,5 +1,11 @@
+import pytest
 
-def test_voltage_extremes():
+
+@pytest.mark.parametrize("a,expected", [
+    ({'voltage': [1, 2, 3]}, (1, 3)),
+    ({'voltage': [1, 2, 3, 3]}, (1, 3)),
+])
+def test_voltage_extremes(a, expected):
     """
     unit test for voltage_extremes function
     creates input in form of dictionary
@@ -8,8 +14,4 @@ def test_voltage_extremes():
     """
     from voltage_extremes import voltage_extremes
 
-    data = {'time': [1, 2, 3], 'voltage': [1, 2, 3]}
-
-    v_extremes = voltage_extremes(data)
-
-    assert v_extremes == (1, 3)
+    assert voltage_extremes(a) == expected
