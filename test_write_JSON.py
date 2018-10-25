@@ -17,7 +17,7 @@ def test_write_JSON():
 
     write_JSON(metrics, 'test_write_Json')
 
-    with open('test_write_Json.json') as read_file:
+    with open('output_data/test_write_Json.json') as read_file:
         m = json.load(read_file)
 
     assert metrics == m
