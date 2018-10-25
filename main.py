@@ -11,9 +11,22 @@ from write_JSON import write_JSON
 
 
 if __name__ == "__main__":
-    filename = 'test_data2'
-    raw_data = readcsv('test_data/' + filename + '.csv')
-    validate_data(raw_data)
+    Successful_Read = False
+
+    while Successful_Read == False:
+        filename = input("Enter filename: ")
+        raw_data = readcsv('test_data/' + filename + '.csv')
+        try:
+            validate_data(raw_data)
+        except DiffListLengthError:
+            print("File contains lists of different lengths, "
+                  "enter new filename")
+            continue
+        except NegTimeValueError:
+            print("File contains negative time values, "
+                  "enter new filename")
+            continue
+        Successful_Read = True
 
     beats = peak_detect(raw_data)
     duration = time_duration(raw_data)
