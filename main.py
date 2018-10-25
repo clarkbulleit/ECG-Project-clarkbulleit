@@ -5,7 +5,7 @@ from peak_detect import peak_detect
 from time_duration import time_duration
 from voltage_extremes import voltage_extremes
 from count_beats import count_beats
-from calc_mean_hr import calc_mean_hr
+from calc_mean_hr import calc_mean_hr, NoBeatsDetected
 from create_dict import create_dict
 from write_JSON import write_JSON
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Successful_Read = False
 
     while Successful_Read is False:
-        filename = input("Enter filename: ")
+            filename = input("Enter filename: ")
         raw_data = readcsv('test_data/' + filename + '.csv')
         try:
             validate_data(raw_data)
@@ -32,7 +32,13 @@ if __name__ == "__main__":
     duration = time_duration(raw_data)
     voltage_extremes = voltage_extremes(raw_data)
     num_beats = count_beats(beats)
-    mean_hr_bpm = calc_mean_hr(num_beats, duration)
+
+    try:
+        mean_hr_bpm = calc_mean_hr(num_beats, duration)
+    except NoBeatsDetected:
+        print("No beats were detected")
+        mean_hr_bpm = 0
+
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
     write_JSON(metrics, filename)
