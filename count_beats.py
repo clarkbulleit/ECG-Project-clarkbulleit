@@ -1,8 +1,8 @@
 
 def count_beats(locs_peaks):
     """
-    :param locs_peaks: numpy array
-    :return: number of elements in array
+    :param locs_peaks: Numpy array of floats
+    :return: Number of elements in numpy array
     """
     import numpy as np
 

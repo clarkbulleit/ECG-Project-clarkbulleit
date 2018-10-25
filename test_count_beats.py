@@ -9,7 +9,7 @@ import pytest
 def test_count_beats(a, expected):
     """
     Unit test for count_beats function
-    :return: assertion that test outputs
+    :return: Assertion that test outputs
     correct number of elements in array
     """
     from count_beats import count_beats
