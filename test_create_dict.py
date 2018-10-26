@@ -1,10 +1,5 @@
 
 def test_create_dict():
-    """ Unit test for create_dict function
-
-    Sets up inputs in correct format and ensures that
-    the function returns the correct dictionary
-    """
     from create_dict import create_dict
     import numpy as np
 
