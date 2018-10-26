@@ -5,7 +5,10 @@
 ## How to Run
 * Run main.py file
 * Input name of file from test_data folder (ex. test_data1)
-  * If the file cannot be found, the prompt will return
+  * If the file cannot be found, input a new filename
+* Input number of minutes for the window used to calculate mean heart rate
+  * If the input is not an integer, type an integer
+* Open output JSON file in output_data folder under the same filename as the input to see the metrics
 
 ## Functions
 * readcsv.py
