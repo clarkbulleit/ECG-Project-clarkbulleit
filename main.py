@@ -45,7 +45,8 @@ if __name__ == "__main__":
         Successful_Read = True
 
     try:
-        user_average = int(input("Enter number of minutes used for the average heart rate calculation: "))
+        user_average = int(input("Enter number of minutes used for the "
+                                 "average heart rate calculation: "))
     except ValueError:
         user_average = int(input("Please enter an integer: "))
 
