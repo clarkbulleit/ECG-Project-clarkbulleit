@@ -13,15 +13,15 @@ import logging
 
 if __name__ == "__main__":
     """ Calculates 5 metrics from raw data imported from a .csv file
-    
+
     Prompts user to input a filename. If the file cannot be found
-    in the test_data folder, the user is prompted again until a 
+    in the test_data folder, the user is prompted again until a
     correct filename is entered.
-    
+
     Attempts to read the file, if custom errors are raised, the function
     prompts the user to input a new filename. Once a file is properly
     read and validated, a log is written to Main_Log.txt.
-    
+
     Prompts user to input window size for mean heart rate calculation.
     If the input is not an integer, the user is prompted again. A third
     wrong input will break the code.
@@ -29,15 +29,15 @@ if __name__ == "__main__":
     Beats, duration, voltage extremes are calculated. If the max voltage
     exceeds the normal range of -10 to 10 V, a warning is entered into
     the log.
-    
+
     Num_beats and mean_hr_bpm are calculated. If the heart rate is outside
     of normal ranges or equal to zero, warnings are entered into the
-    logs. 
-    
+    logs.
+
     The calculated values are compiled into a dictionary called metrics and
     written into a JSON file under the same name as the input in the folder
     output_data. Once the file is properly written to the json file, a new
-    message is entered into the log. 
+    message is entered into the log.
 
     """
     logging.basicConfig(filename="Main_Log.txt",
