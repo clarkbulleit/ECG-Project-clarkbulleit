@@ -41,6 +41,7 @@ if __name__ == "__main__":
             print("File contains negative time values, "
                   "enter new filename")
             continue
+        logging.warning("Info: " + filename + ".csv was read and validated")
         Successful_Read = True
 
     try:
@@ -71,3 +72,5 @@ if __name__ == "__main__":
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
     write_JSON(metrics, filename)
+    logging.warning("Info: Metrics have been written to " + filename +
+                    ".json in the output_data folder")
