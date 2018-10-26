@@ -12,8 +12,11 @@ import logging
 
 
 if __name__ == "__main__":
-    """ Takes user inputted .csv file
-        Outputs metrics from ECG data
+    """ Takes user inputted .csv filename
+        Takes user input of window size used
+        for calculating mean hr
+        Outputs metrics from ECG data into JSON file
+        
     """
     logging.basicConfig(filename="Main_Log.txt",
                         format='%(asctime)s %(message)s',
