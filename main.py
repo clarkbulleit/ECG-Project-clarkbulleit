@@ -41,13 +41,18 @@ if __name__ == "__main__":
             continue
         Successful_Read = True
 
+    try:
+        user_average = int(input("Enter number of minutes used for the average heart rate calculation: "))
+    except ValueError:
+        user_average = int(input("Please enter an integer: "))
+
     beats = peak_detect(raw_data)
     duration = time_duration(raw_data)
     voltage_extremes = voltage_extremes(raw_data)
     num_beats = count_beats(beats)
 
     try:
-        mean_hr_bpm = calc_mean_hr(num_beats, duration)
+        mean_hr_bpm = calc_mean_hr(num_beats, duration, beats, user_average)
     except NoBeatsDetected:
         logging.warning("No beats were detected")
         mean_hr_bpm = 0
