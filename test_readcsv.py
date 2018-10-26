@@ -1,10 +1,5 @@
 
 def test_readcsv():
-    """
-    Reads in short, known .csv file
-    Asserts that reader creates correct Dictionary
-    without the non-numeric input rows
-    """
     from readcsv import readcsv
     raw_data = readcsv('test_readcsv.csv')
 
