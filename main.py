@@ -57,7 +57,7 @@ if __name__ == "__main__":
     try:
         mean_hr_bpm = calc_mean_hr(num_beats, duration, beats, user_average)
     except NoBeatsDetected:
-        logging.warning("No beats were detected")
+        logging.warning("Warning: No beats were detected")
         mean_hr_bpm = 0
 
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
