@@ -1,11 +1,5 @@
 
 def test_peak_detect():
-    """
-    Creates delta train of peaks at every half
-    second in a 10 second time list
-    :return: Checks that the peak_detect function
-    returns the correct peak locations in a numpy array
-    """
     from peak_detect import peak_detect
     import numpy as np
 
