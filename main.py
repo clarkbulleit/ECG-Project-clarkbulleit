@@ -72,3 +72,4 @@ if __name__ == "__main__":
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
     write_JSON(metrics, filename)
+    logging.warning("Info: Metrics have been written to " + filename + ".json in the output_data folder")
