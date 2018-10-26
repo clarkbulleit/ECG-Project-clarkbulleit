@@ -22,6 +22,10 @@ if __name__ == "__main__":
     prompts the user to input a new filename. Once a file is properly
     read and validated, a log is written to Main_Log.txt.
     
+    Prompts user to input window size for mean heart rate calculation.
+    If the input is not an integer, the user is prompted again. A third
+    wrong input will break the code.
+
     Beats, duration, voltage extremes are calculated. If the max voltage
     exceeds the normal range of -10 to 10 V, a warning is entered into
     the log.
