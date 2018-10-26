@@ -16,7 +16,6 @@ if __name__ == "__main__":
         Takes user input of window size used
         for calculating mean hr
         Outputs metrics from ECG data into JSON file
-        
     """
     logging.basicConfig(filename="Main_Log.txt",
                         format='%(asctime)s %(message)s',
