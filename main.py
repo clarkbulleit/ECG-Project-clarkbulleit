@@ -60,6 +60,12 @@ if __name__ == "__main__":
         logging.warning("Warning: No beats were detected")
         mean_hr_bpm = 0
 
+    if mean_hr_bpm < 30:
+        logging.warning("Warning: The heart rate is below normal range")
+
+    elif mean_hr_bpm > 200:
+        logging.warning("Warning: The hear rate exceeds normal values")
+
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
     write_JSON(metrics, filename)
