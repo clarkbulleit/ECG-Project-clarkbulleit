@@ -41,6 +41,7 @@ if __name__ == "__main__":
             print("File contains negative time values, "
                   "enter new filename")
             continue
+        logging.warning("Info: " + filename + ".csv was read and validated")
         Successful_Read = True
 
     try:
