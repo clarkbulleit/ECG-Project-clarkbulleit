@@ -1,13 +1,4 @@
 
-class Error(Exception):
-    """Base class for other exceptions"""
-    pass
-
-
-class NoBeatsDetected(Error):
-    """Raised when no peaks have been detected"""
-    pass
-
 
 def calc_mean_hr(num_beats, duration, beats=[1, 2, 3], user_average=1):
     """
@@ -19,9 +10,6 @@ def calc_mean_hr(num_beats, duration, beats=[1, 2, 3], user_average=1):
     Raises TypeError if non-numeric
     """
     new_num_beats = 0
-
-    if num_beats == 0:
-        raise NoBeatsDetected
 
     if duration <= user_average*60:
         mean_hr_bpm = round((num_beats/duration)*60)

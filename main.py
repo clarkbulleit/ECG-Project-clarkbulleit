@@ -5,7 +5,7 @@ from peak_detect import peak_detect
 from time_duration import time_duration
 from voltage_extremes import voltage_extremes
 from count_beats import count_beats
-from calc_mean_hr import calc_mean_hr, NoBeatsDetected
+from calc_mean_hr import calc_mean_hr
 from create_dict import create_dict
 from write_JSON import write_JSON
 import logging
@@ -51,14 +51,22 @@ if __name__ == "__main__":
 
     beats = peak_detect(raw_data)
     duration = time_duration(raw_data)
-    voltage_extremes = voltage_extremes(raw_data)
-    num_beats = count_beats(beats)
 
-    try:
-        mean_hr_bpm = calc_mean_hr(num_beats, duration, beats, user_average)
-    except NoBeatsDetected:
-        logging.warning("No beats were detected")
-        mean_hr_bpm = 0
+    voltage_extremes = voltage_extremes(raw_data)
+    if voltage_extremes[1] > 10:
+        logging.warning("Warning: Voltage exceeds normal range")
+
+    num_beats = count_beats(beats)
+    mean_hr_bpm = calc_mean_hr(num_beats, duration, beats, user_average)
+
+    if mean_hr_bpm == 0:
+        logging.warning("Warning: No beats were detected")
+
+    elif mean_hr_bpm < 30 and mean_hr_bpm != 0:
+        logging.warning("Warning: The heart rate is below normal range")
+
+    elif mean_hr_bpm > 200:
+        logging.warning("Warning: The hear rate exceeds normal range")
 
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
