@@ -1,13 +1,28 @@
 
 
 def calc_mean_hr(num_beats, duration, beats=[1, 2, 3], user_average=1):
-    """
-    :param num_beats: Int of number of detected beats
-    :param duration: Float of duration of ECG strip
-    :return: Mean hr in beats per minute as int, rounds the
-    float to nearest integer
-    Raises an error if the num_beats input = 0
-    Raises TypeError if non-numeric
+    """ Calculates mean heart rate based on user input
+
+    If the user input window is less than the time duration
+    of the strip, the time duration is used for the calculation.
+    If it is larger, the function finds the number of beats within
+    the specified window, and uses it to find the mean HR
+
+    Args:
+        :param num_beats: Int of number of detected beats
+        :param duration: Float of duration of ECG strip
+        :param beats: Numpy array time locations of peaks
+        :param user_average: Int for user input for time window in
+        minutes
+
+    Return:
+        mean_hr_bpm: Mean hr in beats per minute as int,
+        rounds the float to nearest integer
+
+    Raises:
+        TypeError: If input num_beats or duration are non-
+        numeric
+
     """
     new_num_beats = 0
 
