@@ -10,22 +10,12 @@ import numpy as np
     (50, 130, np.array([1, 30, 40, 50, 121, 140]), 2, 2),
 ])
 def test_calc_mean_hr(a, b, c, d, expected):
-    """
-    Unit test for calc_mean_hr
-    :return: Asserts that the function outputs
-    the correct hr as an integer
-    """
     from calc_mean_hr import calc_mean_hr
 
     assert calc_mean_hr(a, b, c, d) == expected
 
 
 def test_calc_mean_hr_raises():
-    """
-    Unit test for calc_mean_hr
-    :return: Asserts that a non numeric input raises a
-    value error
-    """
     import pytest
     from calc_mean_hr import calc_mean_hr
 

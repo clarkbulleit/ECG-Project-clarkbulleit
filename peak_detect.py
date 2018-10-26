@@ -1,12 +1,18 @@
 
 def peak_detect(data, perh=.5, perl=0.015):
-    """
-    Detects peaks of ECG signals
-    :param data: Dictionary with lists under keys
-    "time" and "voltage"
-    :param perh: Percentage of max height used for threshold, float
-    :param perl: Percentage of length used for min distance,float
-    :return: Numpy array of the time locations of the detected peaks
+    """ Detects time locations of peaks
+
+    Detection algorithm is sensitive to the input parameters. Different
+    inputs work better with different ECG traces.
+
+    Args:
+        :param data: Dictionary with lists under keys
+        "time" and "voltage"
+        :param perh: Float, percentage of max height used for threshold
+        :param perl: Float, percentage of length used for min distance
+
+    Return:
+        :locs_peaks: Numpy array of the time locations of the detected peaks
 
     """
     import peakutils

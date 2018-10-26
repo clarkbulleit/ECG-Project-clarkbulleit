@@ -1,12 +1,20 @@
 
 def write_JSON(metrics, filename):
-    """
+    """ Writes dictionary to JSON file
 
-    :param metrics: dictionary with appropriate metrics
-    :param filename: filename that JSON is being
-    written to
-    :return: JSON file with dictionary entered in
-    alphabetic order
+    Formats the keys of the dictionary in alphabetical
+    order. Writes the file with the same name as the
+    input filename into the folder outpud_data.
+
+    Args:
+        :param metrics: Dictionary with appropriate metrics
+        :param filename: Filename that JSON is being
+        written to
+
+    Return:
+        JSON file with dictionary entered in
+        alphabetic order
+
     """
     import json
     metrics["beats"] = metrics["beats"].tolist()

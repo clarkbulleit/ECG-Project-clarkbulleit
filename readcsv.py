@@ -1,12 +1,17 @@
 
 def readcsv(file):
-    """
+    """ Fetches columns from .csv files
 
-    :param: .csv file
-    :return: dictionary with lists of floats for time and voltage
+    Imports .csv columns into a dictionary. Function
+    excludes rows with non-numeric inputs. Logs
+    number of excluded rows.
 
-    Function does not import line from file if the data type isn't float
-    Prints warning with number of rows not imported because of invalid inputs
+    Args:
+        :param: .csv file
+
+    Returns:
+        Dictionary: lists of floats under keys "time" and "voltage"
+
     """
     import csv
     import logging
