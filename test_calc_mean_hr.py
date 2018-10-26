@@ -16,11 +16,6 @@ def test_calc_mean_hr(a, b, c, d, expected):
 
 
 def test_calc_mean_hr_raises():
-    """
-    Unit test for calc_mean_hr
-    :return: Asserts that a non numeric input raises a
-    value error
-    """
     import pytest
     from calc_mean_hr import calc_mean_hr
 
