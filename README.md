@@ -8,7 +8,16 @@
   * If the file cannot be found, input a new filename
 * Input number of minutes for the window used to calculate mean heart rate
   * If the input is not an integer, type an integer
-* Open output JSON file in output_data folder under the same filename as the input to see the metrics
+* Open JSON file in output_data folder under the same filename as the input to see the metrics
+
+## Log Warning and Info Messages
+* Warning: n Rows with non-numeric inputs were not imported
+* Info: test_data.csv was read and validated
+* Warning: No beats were detected: 
+* Warning: The heart rate is below normal range
+* Warning: The hear rate exceeds normal range
+* Info: Metrics have been written to test_data.json in the output_data folder
+
 
 ## Functions
 * readcsv.py
