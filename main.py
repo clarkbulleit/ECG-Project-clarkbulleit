@@ -15,7 +15,9 @@ if __name__ == "__main__":
     """ Takes user inputted .csv file
         Outputs metrics from ECG data
     """
-    logging.basicConfig(filename="Main_Log.txt", format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    logging.basicConfig(filename="Main_Log.txt",
+                        format='%(asctime)s %(message)s',
+                        datefmt='%m/%d/%Y %I:%M:%S %p')
     Successful_Read = False
 
     while Successful_Read is False:
