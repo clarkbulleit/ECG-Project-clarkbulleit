@@ -29,10 +29,10 @@ def readcsv(file):
                 raw_data["voltage"].append(v)
             except ValueError:
                 nn = nn + 1
-
-                if nn != 0:
-                    logging.warning(str(nn) + ' ' + "Rows with non-numeric "
-                                              "inputs were not imported")
                 continue
+
+        if nn != 0:
+            logging.warning(str(nn) + ' ' + "Rows with non-numeric "
+                                              "inputs were not imported")
 
     return raw_data
