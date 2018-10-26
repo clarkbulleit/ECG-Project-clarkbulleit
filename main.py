@@ -51,7 +51,11 @@ if __name__ == "__main__":
 
     beats = peak_detect(raw_data)
     duration = time_duration(raw_data)
+
     voltage_extremes = voltage_extremes(raw_data)
+    if voltage_extremes[1] > 10:
+        logging.warning("Warning: Voltage exceeds normal range")
+
     num_beats = count_beats(beats)
 
     try:
@@ -64,7 +68,7 @@ if __name__ == "__main__":
         logging.warning("Warning: The heart rate is below normal range")
 
     elif mean_hr_bpm > 200:
-        logging.warning("Warning: The hear rate exceeds normal values")
+        logging.warning("Warning: The hear rate exceeds normal range")
 
     metrics = create_dict(mean_hr_bpm, voltage_extremes, duration,
                           num_beats, beats)
