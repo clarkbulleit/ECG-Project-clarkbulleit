@@ -1,0 +1,12 @@
+{
+    "beats": [
+        25.169
+    ],
+    "duration": 27.775,
+    "mean_hr_bpm": 2,
+    "num_beats": 1,
+    "voltage_extremes": [
+        -0.76,
+        1.99
+    ]
+}

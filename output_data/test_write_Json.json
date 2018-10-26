@@ -1,0 +1,11 @@
+{
+    "beats": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "duration": 1,
+    "mean_hr_bpm": 60,
+    "num_beats": 10
+}
