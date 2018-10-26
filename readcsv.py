@@ -10,7 +10,8 @@ def readcsv(file):
     """
     import csv
     import logging
-    logging.basicConfig(filename="Main_Log.txt", format='%(asctime)s %(message)s',
+    logging.basicConfig(filename="Main_Log.txt",
+                        format='%(asctime)s %(message)s',
                         datefmt='%m/%d/%Y %I:%M:%S %p')
 
     with open(file) as csv_file:
@@ -33,6 +34,6 @@ def readcsv(file):
 
         if nn != 0:
             logging.warning(str(nn) + ' ' + "Rows with non-numeric "
-                                              "inputs were not imported")
+                            "inputs were not imported")
 
     return raw_data
