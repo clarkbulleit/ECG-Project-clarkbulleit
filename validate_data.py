@@ -14,13 +14,21 @@ class NegTimeValueError(Error):
 
 
 def validate_data(data):
-    """
-    :param data: Dictionary with lists under keys
-    "time" and "voltage"
-    :return: DiffListLengthError if the time
-    and voltage lists are not equal
-    :return: NegTimeValueError if negative time
-    values are present
+    """ Validates dictionary lists
+
+    Checks lists in dictionary for mismatching list
+    length and negative time values.
+
+    Args:
+        :param data: Dictionary with lists under keys
+        "time" and "voltage"
+
+    Raises:
+        DiffListLengthError: time
+        and voltage lists are not equal
+        NegTimeValueError: negative time
+        values are present
+
     """
 
     if len(data["time"]) != len(data["voltage"]):
